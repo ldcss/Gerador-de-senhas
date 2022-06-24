@@ -12,18 +12,40 @@
 <body>
   <h1 class="titulo">Gerador de Senha</h1>
   <main class="container-input">
-    <span>Tamanho: <span id="valor"></span> caracteres</span>
+    <span class="bold">Tamanho: <span id="valor" class="bold"></span> caracteres</span>
     <input id="slider" class="slider" type="range" min="5" max="25" value="0" />
-    <button id="button" class="button-action">Gerar Senha</button>
+    <form>
+      <fieldset>
+        <span class="bold">Escolha o tipo da sua senha:</span>
+        <div class="options">
+          <input name="option" onclick="getPasswordType()" type="radio" id="letras-numeros" value="0" checked>
+          <label for="letras-numeros">Letras, símbolos e números</label>
+
+        </div>
+        <div class="options">
+          <input name="option" onclick="getPasswordType()" type="radio" id="letras" value="1">
+          <label for="letras">Apenas letras e símbolos</label>
+
+        </div>
+
+        <div class="options">
+          <input name="option" onclick="getPasswordType()" type="radio" id="numeros" value="2">
+          <label for="numeros">Apenas Números</label>
+        </div>
+      </fieldset>
+    </form>
+    <button id="button" class="button-action bold" onclick="generatePassword()">Gerar Senha</button>
   </main>
 
   <div id="container-password" class="container-password hide">
     <span class="title">A senha gerada foi: </span>
-    <span id="password" class="password">oioi</span>
+    <span id="password" class="password" onclick="copyPassword()"></span>
     <span class="tooltip">Clique na senha para copiar</span>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js">
+
+  </script>
 </body>
 
 </html>
